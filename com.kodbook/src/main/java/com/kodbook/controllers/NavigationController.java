@@ -15,9 +15,9 @@ public class NavigationController {
 		return "signUp";
 	}
 	
+	
 	@GetMapping("/openCreatePost")
 	public String openCreatePost() {
 		return "createPost";
 	}
-
 }

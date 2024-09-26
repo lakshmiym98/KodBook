@@ -27,6 +27,18 @@ public class Post {
 	@Column(columnDefinition = "LONGBLOB")
 	private byte[] photo;
 
+	public String getPhotoBase64() {
+        if (photo == null) {
+            return null;
+        }
+        return Base64.getEncoder().encodeToString(photo);
+    }	
+	public Post() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
 	public Post(Long id, String caption, int likes, List<String> comments, byte[] photo) {
 		super();
 		this.id = id;
@@ -36,56 +48,53 @@ public class Post {
 		this.photo = photo;
 	}
 
-	public Post() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	public Long getId() {
 		return id;
 	}
+
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+
 	public String getCaption() {
 		return caption;
 	}
+
 
 	public void setCaption(String caption) {
 		this.caption = caption;
 	}
 
+
 	public int getLikes() {
 		return likes;
 	}
+
 
 	public void setLikes(int likes) {
 		this.likes = likes;
 	}
 
+
 	public List<String> getComments() {
 		return comments;
 	}
+
 
 	public void setComments(List<String> comments) {
 		this.comments = comments;
 	}
 
+
 	public byte[] getPhoto() {
 		return photo;
 	}
 
+
 	public void setPhoto(byte[] photo) {
 		this.photo = photo;
-	}
-	
-	public String getPhotoBase64() {
-		if(photo == null) {
-			return null;
-		}
-		return Base64.getEncoder().encodeToString(photo);
 	}
 
 	@Override
